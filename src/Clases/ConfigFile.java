@@ -15,7 +15,7 @@ import java.util.Properties;
  */
 public class ConfigFile {
 
-    String configPath = "src/config.propities";
+    String configPath = "../src/config.properties";
     Properties properties = new Properties();
 
     public void save(String title, String value) throws IOException {
