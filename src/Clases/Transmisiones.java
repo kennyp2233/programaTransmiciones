@@ -4,10 +4,6 @@
  */
 package Clases;
 
-import java.time.Duration;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-
 /**
  *
  * @author kenny
@@ -18,7 +14,11 @@ public class Transmisiones {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         new JFGuiPrincipal().setVisible(true);
+
     }
+
+    
 
 }

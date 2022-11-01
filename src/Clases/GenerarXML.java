@@ -20,8 +20,10 @@ public class GenerarXML {
 
     public GenerarXML(String[] datos, String fileName) {
         this.generateXML = new LinkedList<>();
+
         datosAgencia = new HashMap<>();
         datosDocumento = new HashMap<>();
+
         this.fileName = fileName;
         this.datos = datos;
         setearDatosAgencia();
@@ -31,48 +33,48 @@ public class GenerarXML {
 
     private void setearDatosDocuento() {
 
-        datosAgencia.put("TypeCode", "034");
-        datosAgencia.put("ID", fileName);
-        datosAgencia.put("IssueDateTime", Instant.now().truncatedTo(ChronoUnit.SECONDS).minus(Duration.ofMinutes(4)).toString());
-        datosAgencia.put("DeclarationOfficeID", "055");
-        datosAgencia.put("AcceptanceDateTime", Instant.now().truncatedTo(ChronoUnit.SECONDS).minus(Duration.ofMinutes(4)).toString());
-        datosAgencia.put("VersionID", "1.0");
-        datosAgencia.put("CargaCorrectionTypeCode", "D");
-        datosAgencia.put("DegreeNumberNumeric", "1");
-        datosAgencia.put("DocumentTypeCode", "AE");
-        datosAgencia.put("TraderAssignedReferenceID", datos[0]);
-        datosAgencia.put("MasterLandingBillSequenceNumeric", datos[1]);
-        datosAgencia.put("HouseLandingBillSequenceNumeric", datos[2]);
-        datosAgencia.put("ID2", datos[3]);
-        datosAgencia.put("ChangeReasonCode", "A");
-        datosAgencia.put("ChangeReason", "ENVIO DESPUES DE 48 HORAS");
-        datosAgencia.put("AssociatedGovernmentProcedureCode", "I");
-        datosAgencia.put("BoardedQuantity", datos[4]);
-        datosAgencia.put("TotalGrossMassMeasure", datos[5]);
-        datosAgencia.put("LoadingDateTime", datos[6]);
-        datosAgencia.put("ID3", datos[7]);
-        datosAgencia.put("ID4", datos[8]);
-        datosAgencia.put("ID5", "03905645");
-        datosAgencia.put("ID6", datos[9]);
-        datosAgencia.put("TypeCode1", "HWB");
-        datosAgencia.put("ID7", "23902040");
-        datosAgencia.put("Name", datos[10]);//
-        datosAgencia.put("Line", datos[11]);
-        datosAgencia.put("Name1", datos[12]);
-        datosAgencia.put("Line1", datos[13]);
-        datosAgencia.put("Name2", datos[14]);
-        datosAgencia.put("PartyDocumentIdentificationType", "001");
-        datosAgencia.put("PartyDocumentID", datos[15]);
-        datosAgencia.put("CountryCode", "EC");
-        datosAgencia.put("Line2", datos[16]);
-        datosAgencia.put("ID8", datos[17]);
-        datosAgencia.put("Instructions", "Ninguna");
-        datosAgencia.put("ID9", datos[18]);
-        datosAgencia.put("SequenceNumeric", datos[19]);
-        datosAgencia.put("NetNetWeightMeasure", datos[5]);
-        datosAgencia.put("QuantityQuantity", datos[4]);
-        datosAgencia.put("TypeCode2", "035");
-        datosAgencia.put("CargoDescription", "FRESH FLOWERS");
+        datosDocumento.put("TypeCode", "034");
+        datosDocumento.put("ID", fileName);
+        datosDocumento.put("IssueDateTime", Instant.now().truncatedTo(ChronoUnit.SECONDS).minus(Duration.ofMinutes(4)).toString());
+        datosDocumento.put("DeclarationOfficeID", "055");
+        datosDocumento.put("AcceptanceDateTime", Instant.now().truncatedTo(ChronoUnit.SECONDS).minus(Duration.ofMinutes(4)).toString());
+        datosDocumento.put("VersionID", "1.0");
+        datosDocumento.put("CargaCorrectionTypeCode", "D");
+        datosDocumento.put("DegreeNumberNumeric", "1");
+        datosDocumento.put("DocumentTypeCode", "AE");
+        datosDocumento.put("TraderAssignedReferenceID", datos[0]);
+        datosDocumento.put("MasterLandingBillSequenceNumeric", datos[1]);
+        datosDocumento.put("HouseLandingBillSequenceNumeric", datos[2]);
+        datosDocumento.put("ID2", datos[3]);
+        datosDocumento.put("ChangeReasonCode", "A");
+        datosDocumento.put("ChangeReason", "ENVIO DESPUES DE 48 HORAS");
+        datosDocumento.put("AssociatedGovernmentProcedureCode", "I");
+        datosDocumento.put("BoardedQuantity", datos[4]);
+        datosDocumento.put("TotalGrossMassMeasure", datos[5]);
+        datosDocumento.put("LoadingDateTime", datos[6]);
+        datosDocumento.put("ID3", datos[7]);
+        datosDocumento.put("ID4", datos[8]);
+        datosDocumento.put("ID5", "03905645");
+        datosDocumento.put("ID6", datos[9]);
+        datosDocumento.put("TypeCode1", "HWB");
+        datosDocumento.put("ID7", "23902040");
+        datosDocumento.put("Name", datos[10]);//
+        datosDocumento.put("Line", datos[11]);
+        datosDocumento.put("Name1", datos[12]);
+        datosDocumento.put("Line1", datos[13]);
+        datosDocumento.put("Name2", datos[14]);
+        datosDocumento.put("PartyDocumentIdentificationType", "001");
+        datosDocumento.put("PartyDocumentID", datos[15]);
+        datosDocumento.put("CountryCode", "EC");
+        datosDocumento.put("Line2", datos[16]);
+        datosDocumento.put("ID8", datos[17]);
+        datosDocumento.put("Instructions", "Ninguna");
+        datosDocumento.put("ID9", datos[18]);
+        datosDocumento.put("SequenceNumeric", datos[19]);
+        datosDocumento.put("NetNetWeightMeasure", datos[5]);
+        datosDocumento.put("QuantityQuantity", datos[4]);
+        datosDocumento.put("TypeCode2", "035");
+        datosDocumento.put("CargoDescription", "FRESH FLOWERS");
     }
 
     private void setearDatosAgencia() {
