@@ -144,258 +144,256 @@ public class GenerarXML {
                 + "<ns0:UserId>");
         this.generateXML.add(datosAgencia.get("UserId"));
         this.generateXML.add("</ns0:UserId>\n"
-                + "</ns0:Header>\n"
-                + "</SOAP-ENV:Header>\n"
-                + "<SOAP-ENV:Body>\n"
-                + "<tns:sendExportCargaCME xmlns:tns=\"http://webservice.ecg.ecuapass.aduana.gob.ec/\">\n"
-                + "<arg0>\n"
-                + "<DocumentMetadata xsi:schemaLocation=\"urn:wco:datamodel:EC:CME:1:0:0 EC_CME_0p1.02.xsd\" xmlns=\"urn:wco:datamodel:EC:CME:1:0:0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n"
-                + "<WCODataModelVersion />\n"
-                + "<WCODocumentName />\n"
-                + "<CountryCode />\n"
-                + "<AgencyName />\n"
-                + "<AgencyAssignedCountrySubEntityID />\n"
-                + "<AgencyAssignedCustomizedDocumentName />\n"
-                + "<AgencyAssignedCustomizedDocumentVersion />\n"
-                + "<Declaration>\n"
-                + "<TypeCode>");
+                + "        </ns0:Header>\n"
+                + "    </SOAP-ENV:Header>\n"
+                + "    <SOAP-ENV:Body>\n"
+                + "        <tns:sendExportCargaCME xmlns:tns=\"http://webservice.ecg.ecuapass.aduana.gob.ec/\">\n"
+                + "            <arg0>&lt;DocumentMetadata xsi:schemaLocation=\"urn:wco:datamodel:EC:CME:1:0:0 EC_CME_0p1.02.xsd\" xmlns=\"urn:wco:datamodel:EC:CME:1:0:0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"&gt;\n"
+                + "&lt;WCODataModelVersion/&gt;\n"
+                + "&lt;WCODocumentName/&gt;\n"
+                + "&lt;CountryCode/&gt;\n"
+                + "&lt;AgencyName/&gt;\n"
+                + "&lt;AgencyAssignedCountrySubEntityID/&gt;\n"
+                + "&lt;AgencyAssignedCustomizedDocumentName/&gt;\n"
+                + "&lt;AgencyAssignedCustomizedDocumentVersion/&gt;\n"
+                + "&lt;Declaration&gt;\n"
+                + "&lt;TypeCode&gt;");
         //resto hasta llegar a TypeCode
         //1
         this.generateXML.add(datosDocumento.get("TypeCode"));
 
         //2
-        this.generateXML.add("</TypeCode>\n"
-                + "                        <ID>");
+        this.generateXML.add("&lt;/TypeCode&gt;\n"
+                + "&lt;ID&gt;");
         this.generateXML.add(datosDocumento.get("ID"));
         //3
-        this.generateXML.add("</ID>\n"
-                + "<IssueDateTime>");
+        this.generateXML.add("&lt;/ID&gt;\n"
+                + "&lt;IssueDateTime&gt;");
         this.generateXML.add(datosDocumento.get("IssueDateTime"));
         //4
-        this.generateXML.add("</IssueDateTime>\n"
-                + "<DeclarationOfficeID>");
+        this.generateXML.add("&lt;/IssueDateTime&gt;\n"
+                + "&lt;DeclarationOfficeID&gt;");
         this.generateXML.add(datosDocumento.get("DeclarationOfficeID"));
         //5
-        this.generateXML.add("</DeclarationOfficeID>\n"
-                + "<AcceptanceDateTime>");
+        this.generateXML.add("&lt;/DeclarationOfficeID&gt;\n"
+                + "&lt;AcceptanceDateTime&gt;");
         this.generateXML.add(datosDocumento.get("AcceptanceDateTime"));
         //6
-        this.generateXML.add("</AcceptanceDateTime>\n"
-                + "<VersionID>");
+        this.generateXML.add("&lt;/AcceptanceDateTime&gt;\n"
+                + "&lt;VersionID&gt;");
         this.generateXML.add(datosDocumento.get("VersionID"));
         //7
-        this.generateXML.add("</VersionID>\n"
-                + "<CargaCorrectionTypeCode>");
+        this.generateXML.add("&lt;/VersionID&gt;\n"
+                + "&lt;CargaCorrectionTypeCode&gt;");
         this.generateXML.add(datosDocumento.get("CargaCorrectionTypeCode"));
         //8
-        this.generateXML.add("</CargaCorrectionTypeCode>\n"
-                + "<DegreeNumberNumeric>");
+        this.generateXML.add("&lt;/CargaCorrectionTypeCode&gt;\n"
+                + "&lt;DegreeNumberNumeric&gt;");
         this.generateXML.add(datosDocumento.get("DegreeNumberNumeric"));
         //9
-        this.generateXML.add("</DegreeNumberNumeric>\n"
-                + "<DocumentTypeCode>");
+        this.generateXML.add("&lt;/DegreeNumberNumeric&gt;\n"
+                + "&lt;DocumentTypeCode&gt;");
         this.generateXML.add(datosDocumento.get("DocumentTypeCode"));
         //10
-        this.generateXML.add("</DocumentTypeCode>\n"
-                + "<UCR>\n"
-                + "<TraderAssignedReferenceID>");
+        this.generateXML.add("&lt;/DocumentTypeCode&gt;\n"
+                + "&lt;UCR&gt;\n"
+                + "&lt;TraderAssignedReferenceID&gt;");
         this.generateXML.add(datosDocumento.get("TraderAssignedReferenceID"));
         //11
-        this.generateXML.add("</TraderAssignedReferenceID>\n"
-                + "<MasterLandingBillSequenceNumeric>");
+        this.generateXML.add("&lt;/TraderAssignedReferenceID&gt;\n"
+                + "&lt;MasterLandingBillSequenceNumeric&gt;");
         this.generateXML.add(datosDocumento.get("MasterLandingBillSequenceNumeric"));
         //12
-        this.generateXML.add("</MasterLandingBillSequenceNumeric>\n"
-                + "<HouseLandingBillSequenceNumeric>");
+        this.generateXML.add("&lt;/MasterLandingBillSequenceNumeric&gt;\n"
+                + "&lt;HouseLandingBillSequenceNumeric&gt;");
         this.generateXML.add(datosDocumento.get("HouseLandingBillSequenceNumeric"));
         //12
-        this.generateXML.add("</HouseLandingBillSequenceNumeric>\n"
-                + "</UCR>\n"
-                + "<Agent>\n"
-                + "<ID>");
+        this.generateXML.add("&lt;/HouseLandingBillSequenceNumeric&gt;\n"
+                + "&lt;/UCR&gt;\n"
+                + "&lt;Agent&gt;\n"
+                + "&lt;ID&gt;");
         this.generateXML.add(datosDocumento.get("ID2"));
         //13
-        this.generateXML.add("</ID>\n"
-                + "                        </Agent>\n"
-                + "                        <Amendment>\n"
-                + "                            <ChangeReasonCode>");
+        this.generateXML.add("&lt;/ID&gt;\n"
+                + "&lt;/Agent&gt;\n"
+                + "&lt;Amendment&gt;\n"
+                + "&lt;ChangeReasonCode&gt;");
         this.generateXML.add(datosDocumento.get("ChangeReasonCode"));
         //14
-        this.generateXML.add("</ChangeReasonCode>\n"
-                + "                            <ChangeReason>");
+        this.generateXML.add("&lt;/ChangeReasonCode&gt;\n"
+                + "&lt;ChangeReason&gt;");
         this.generateXML.add(datosDocumento.get("ChangeReason"));
         //15
-        this.generateXML.add("</ChangeReason>\n"
-                + "                        </Amendment>\n"
-                + "                        <BorderTransportMeans>\n"
-                + "                            <TransportMeansOwner />\n"
-                + "                            <TransportMeansOperator />\n"
-                + "                        </BorderTransportMeans>\n"
-                + "                        <UnloadingLocation />\n"
-                + "                        <GovernmentProcedure />\n"
-                + "                        <Consignment>\n"
-                + "                            <AssociatedGovernmentProcedureCode>");
+        this.generateXML.add("&lt;/ChangeReason&gt;\n"
+                + "&lt;/Amendment&gt;\n"
+                + "&lt;BorderTransportMeans&gt;\n"
+                + "&lt;TransportMeansOwner/&gt;\n"
+                + "&lt;TransportMeansOperator/&gt;\n"
+                + "&lt;/BorderTransportMeans&gt;\n"
+                + "&lt;UnloadingLocation/&gt;\n"
+                + "&lt;GovernmentProcedure/&gt;\n"
+                + "&lt;Consignment&gt;\n"
+                + "&lt;AssociatedGovernmentProcedureCode&gt;");
         this.generateXML.add(datosDocumento.get("AssociatedGovernmentProcedureCode"));
         //16
-        this.generateXML.add("</AssociatedGovernmentProcedureCode>\n"
-                + "                            <BoardedQuantity>");
+        this.generateXML.add("&lt;/AssociatedGovernmentProcedureCode&gt;\n"
+                + "&lt;BoardedQuantity&gt;");
         this.generateXML.add(datosDocumento.get("BoardedQuantity"));
         //17
-        this.generateXML.add("</BoardedQuantity>\n"
-                + "                            <TotalGrossMassMeasure>");
+        this.generateXML.add("&lt;/BoardedQuantity&gt;\n"
+                + "&lt;TotalGrossMassMeasure&gt;");
         this.generateXML.add(datosDocumento.get("TotalGrossMassMeasure"));
         //18
-        this.generateXML.add("</TotalGrossMassMeasure>\n"
-                + "                            <BorderTransportMeans />\n"
-                + "                            <LoadingLocation>\n"
-                + "                                <LoadingDateTime>");
+        this.generateXML.add("&lt;/TotalGrossMassMeasure&gt;\n"
+                + "&lt;BorderTransportMeans/&gt;\n"
+                + "&lt;LoadingLocation&gt;\n"
+                + "&lt;LoadingDateTime&gt;");
         this.generateXML.add(datosDocumento.get("LoadingDateTime"));
         //19
-        this.generateXML.add("</LoadingDateTime>\n"
-                + "                            </LoadingLocation>\n"
-                + "                            <AssociatedTransportDocument>\n"
-                + "                                <ID>");
+        this.generateXML.add("&lt;/LoadingDateTime&gt;\n"
+                + "&lt;/LoadingLocation&gt;\n"
+                + "&lt;AssociatedTransportDocument&gt;\n"
+                + "&lt;ID&gt;");
         this.generateXML.add(datosDocumento.get("ID3"));
         //20
-        this.generateXML.add("</ID>\n"
-                + "                            </AssociatedTransportDocument>\n"
-                + "                            <UnloadingLocation>\n"
-                + "                                <ID>");
+        this.generateXML.add("&lt;/ID&gt;\n"
+                + "&lt;/AssociatedTransportDocument&gt;\n"
+                + "&lt;UnloadingLocation&gt;\n"
+                + "&lt;ID&gt;");
         this.generateXML.add(datosDocumento.get("ID4"));
         //21
-        this.generateXML.add("</ID>\n"
-                + "                            </UnloadingLocation>\n"
-                + "                            <Carrier>\n"
-                + "                                <ID>");
+        this.generateXML.add("&lt;/ID&gt;\n"
+                + "&lt;/UnloadingLocation&gt;\n"
+                + "&lt;Carrier&gt;\n"
+                + "&lt;ID&gt;");
         this.generateXML.add(datosDocumento.get("ID5"));
         //22
-        this.generateXML.add("</ID>\n"
-                + "                            </Carrier>\n"
-                + "                            <IntermediateCarrier />\n"
-                + "                            <TransportContractDocument>\n"
-                + "                                <ID>");
+        this.generateXML.add("&lt;/ID&gt;\n"
+                + "&lt;/Carrier&gt;\n"
+                + "&lt;IntermediateCarrier/&gt;\n"
+                + "&lt;TransportContractDocument&gt;\n"
+                + "&lt;ID&gt;");
         this.generateXML.add(datosDocumento.get("ID6"));
 
         //23
-        this.generateXML.add("</ID>\n"
-                + "                                <TypeCode>");
+        this.generateXML.add("&lt;/ID&gt;\n"
+                + "&lt;TypeCode&gt;");
         this.generateXML.add(datosDocumento.get("TypeCode1"));
         //23
-        this.generateXML.add("</TypeCode>\n"
-                + "                                <Consolidator>\n"
-                + "                                    <ID>");
+        this.generateXML.add("&lt;/TypeCode&gt;\n"
+                + "&lt;Consolidator&gt;\n"
+                + "&lt;ID&gt;");
         this.generateXML.add(datosDocumento.get("ID7"));
         //24
-        this.generateXML.add("</ID>\n"
-                + "                                </Consolidator>\n"
-                + "                            </TransportContractDocument>\n"
-                + "                            <Consignee>\n"
-                + "                                <Name>");
+        this.generateXML.add("&lt;/ID&gt;\n"
+                + "&lt;/Consolidator&gt;\n"
+                + "&lt;/TransportContractDocument&gt;\n"
+                + "&lt;Consignee&gt;\n"
+                + "&lt;Name&gt;");
         this.generateXML.add(datosDocumento.get("Name"));
         //25
-        this.generateXML.add("</Name>\n"
-                + "                                <Address>\n"
-                + "                                    <Line>");
+        this.generateXML.add("&lt;/Name&gt;\n"
+                + "&lt;Address&gt;\n"
+                + "&lt;Line&gt;");
         this.generateXML.add(datosDocumento.get("Line"));
 
         //26
-        this.generateXML.add("</Line>\n"
-                + "                                </Address>\n"
-                + "                            </Consignee>\n"
-                + "                            <NotifyParty>\n"
-                + "                                <Name>");
+        this.generateXML.add("&lt;/Line&gt;\n"
+                + "&lt;/Address&gt;\n"
+                + "&lt;/Consignee&gt;\n"
+                + "&lt;NotifyParty&gt;\n"
+                + "&lt;Name&gt;");
         this.generateXML.add(datosDocumento.get("Name1"));
 
         //27
-        this.generateXML.add("</Name>\n"
-                + "                                <Address>\n"
-                + "                                    <Line>");
+        this.generateXML.add("&lt;/Name&gt;\n"
+                + "&lt;Address&gt;\n"
+                + "&lt;Line&gt;");
         this.generateXML.add(datosDocumento.get("Line1"));
         //28
-        this.generateXML.add("</Line>\n"
-                + "                                </Address>\n"
-                + "                            </NotifyParty>\n"
-                + "                            <Consignor>\n"
-                + "                                <Name>");
+        this.generateXML.add("&lt;/Line&gt;\n"
+                + "&lt;/Address&gt;\n"
+                + "&lt;/NotifyParty&gt;\n"
+                + "&lt;Consignor&gt;\n"
+                + "&lt;Name&gt;");
         this.generateXML.add(datosDocumento.get("Name2"));
         //29
-        this.generateXML.add("</Name>\n"
-                + "                                <PartyDocumentIdentificationType>");
+        this.generateXML.add("&lt;/Name&gt;\n"
+                + "&lt;PartyDocumentIdentificationType&gt;");
         this.generateXML.add(datosDocumento.get("PartyDocumentIdentificationType"));
         //30
-        this.generateXML.add("</PartyDocumentIdentificationType>\n"
-                + "                                <PartyDocumentID>");
+        this.generateXML.add("&lt;/PartyDocumentIdentificationType&gt;\n"
+                + "&lt;PartyDocumentID&gt;");
         this.generateXML.add(datosDocumento.get("PartyDocumentID"));
         //31
-        this.generateXML.add("</PartyDocumentID>\n"
-                + "                                <Address>\n"
-                + "                                    <CountryCode>");
+        this.generateXML.add("&lt;/PartyDocumentID&gt;\n"
+                + "&lt;Address&gt;\n"
+                + "&lt;CountryCode&gt;");
         this.generateXML.add(datosDocumento.get("CountryCode"));
         //32
-        this.generateXML.add("</CountryCode>\n"
-                + "                                    <Line>");
+        this.generateXML.add("&lt;/CountryCode&gt;\n"
+                + "&lt;Line&gt;");
         this.generateXML.add(datosDocumento.get("Line2"));
         //33
-        this.generateXML.add("</Line>\n"
-                + "                                </Address>\n"
-                + "                            </Consignor>\n"
-                + "                            <GoodsReceiptPlace>\n"
-                + "                                <ID>");
+        this.generateXML.add("&lt;/Line&gt;\n"
+                + "&lt;/Address&gt;\n"
+                + "&lt;/Consignor&gt;\n"
+                + "&lt;GoodsReceiptPlace&gt;\n"
+                + "&lt;ID&gt;");
         this.generateXML.add(datosDocumento.get("ID8"));
         //34
-        this.generateXML.add("</ID>\n"
-                + "                            </GoodsReceiptPlace>\n"
-                + "                            <Handling>\n"
-                + "                                <Instructions>");
+        this.generateXML.add("&lt;/ID&gt;\n"
+                + "&lt;/GoodsReceiptPlace&gt;\n"
+                + "&lt;Handling&gt;\n"
+                + "&lt;Instructions&gt;");
         this.generateXML.add(datosDocumento.get("Instructions"));
         //35
-        this.generateXML.add("</Instructions>\n"
-                + "                            </Handling>\n"
-                + "                            <PreviousDocument>\n"
-                + "                                <ID>");
+        this.generateXML.add("&lt;/Instructions&gt;\n"
+                + "&lt;/Handling&gt;\n"
+                + "&lt;PreviousDocument&gt;\n"
+                + "&lt;ID&gt;");
         this.generateXML.add(datosDocumento.get("ID9"));
         //36
-        this.generateXML.add("</ID>\n"
-                + "                                <TotalPackageQuantity>0</TotalPackageQuantity>\n"
-                + "                                <TotalGrossMassMeasure>0</TotalGrossMassMeasure>\n"
-                + "                                <TransportSplitIndicator>false</TransportSplitIndicator>\n"
-                + "                                <SplitNumberNumeric>0</SplitNumberNumeric>\n"
-                + "                            </PreviousDocument>\n"
-                + "                            <ConsignmentItem>\n"
-                + "                                <SequenceNumeric>");
+        this.generateXML.add("&lt;/ID&gt;\n"
+                + "&lt;TotalPackageQuantity&gt;0&lt;/TotalPackageQuantity&gt;\n"
+                + "&lt;TotalGrossMassMeasure&gt;0&lt;/TotalGrossMassMeasure&gt;\n"
+                + "&lt;TransportSplitIndicator&gt;false&lt;/TransportSplitIndicator&gt;\n"
+                + "&lt;SplitNumberNumeric&gt;0&lt;/SplitNumberNumeric&gt;\n"
+                + "&lt;/PreviousDocument&gt;\n"
+                + "&lt;ConsignmentItem&gt;\n"
+                + "&lt;SequenceNumeric&gt;");
         this.generateXML.add(datosDocumento.get("SequenceNumeric"));
         //37
-        this.generateXML.add("</SequenceNumeric>\n"
-                + "                                <GoodsStatusCode>CG</GoodsStatusCode>\n"
-                + "                                <GoodsMeasure>\n"
-                + "                                    <NetNetWeightMeasure>");
+        this.generateXML.add("&lt;/SequenceNumeric&gt;\n"
+                + "&lt;GoodsStatusCode&gt;CG&lt;/GoodsStatusCode&gt;\n"
+                + "&lt;GoodsMeasure&gt;\n"
+                + "&lt;NetNetWeightMeasure&gt;");
         this.generateXML.add(datosDocumento.get("NetNetWeightMeasure"));
         //38
-        this.generateXML.add("</NetNetWeightMeasure>\n"
-                + "                                </GoodsMeasure>\n"
-                + "                                <Packaging>\n"
-                + "                                    <QuantityQuantity>");
+        this.generateXML.add("&lt;/NetNetWeightMeasure&gt;\n"
+                + "&lt;/GoodsMeasure&gt;\n"
+                + "&lt;Packaging&gt;\n"
+                + "&lt;QuantityQuantity&gt;");
         this.generateXML.add(datosDocumento.get("QuantityQuantity"));
         //39
-        this.generateXML.add("</QuantityQuantity>\n"
-                + "                                    <TypeCode>");
+        this.generateXML.add("&lt;/QuantityQuantity&gt;\n"
+                + "&lt;TypeCode&gt;");
         this.generateXML.add(datosDocumento.get("TypeCode2"));
 
         //40
-        this.generateXML.add("</TypeCode>\n"
-                + "                                </Packaging>\n"
-                + "                                <Commodity>\n"
-                + "                                    <CargoDescription>");
+        this.generateXML.add("&lt;/TypeCode&gt;\n"
+                + "&lt;/Packaging&gt;\n"
+                + "&lt;Commodity&gt;\n"
+                + "&lt;CargoDescription&gt;");
         this.generateXML.add(datosDocumento.get("CargoDescription"));
         //ebnd
-        this.generateXML.add("</CargoDescription>\n"
-                + "                                    <CommodityRelatedPackaging />\n"
-                + "                                </Commodity>\n"
-                + "                            </ConsignmentItem>\n"
-                + "                        </Consignment>\n"
-                + "                    </Declaration>\n"
-                + "                </DocumentMetadata>\n"
-                + "            </arg0>\n"
+        this.generateXML.add("&lt;/CargoDescription&gt;\n"
+                + "&lt;CommodityRelatedPackaging/&gt;\n"
+                + "&lt;/Commodity&gt;\n"
+                + "&lt;/ConsignmentItem&gt;\n"
+                + "&lt;/Consignment&gt;\n"
+                + "&lt;/Declaration&gt;\n"
+                + "&lt;/DocumentMetadata&gt;</arg0>\n"
                 + "        </tns:sendExportCargaCME>\n"
                 + "    </SOAP-ENV:Body>\n"
                 + "</SOAP-ENV:Envelope>");

@@ -59,11 +59,6 @@ Clases.CodigoManifiesto
 java.math.BigInteger
 java.lang.String
 java.lang.invoke.StringConcatFactory
-||:Clases.JFGuiPrincipal$1
-java.awt.event.ActionListener
-java.lang.Object
-Clases.JFGuiPrincipal$1
-Clases.JFGuiPrincipal
 ||:Clases.GenerarXML
 java.lang.invoke.MethodHandles$Lookup
 java.util.Iterator
@@ -78,6 +73,11 @@ java.lang.Object
 java.lang.String
 java.lang.invoke.StringConcatFactory
 java.util.LinkedList
+||:Clases.JFGuiPrincipal$1
+java.awt.event.ActionListener
+java.lang.Object
+Clases.JFGuiPrincipal$1
+Clases.JFGuiPrincipal
 ||:Clases.JFGuiPrincipal$2
 java.awt.event.ActionListener
 java.lang.Object
