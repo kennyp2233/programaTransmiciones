@@ -14,11 +14,10 @@ public class Transmisiones {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        new JFGuiPrincipal().setVisible(true);
+
+        JFGuiPrincipal jf = new JFGuiPrincipal();
+        jf.setVisible(true);
 
     }
-
-    
 
 }
