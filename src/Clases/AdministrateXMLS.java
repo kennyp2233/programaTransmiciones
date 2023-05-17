@@ -45,7 +45,9 @@ public class AdministrateXMLS {
 
             (new Conexion()).insertarGuiaHija(
                     cm.TraderAssignedReferenceID(),
-                    Integer.parseInt(this.datos.get("MSN"))
+                    Integer.parseInt(this.datos.get("MSN")),
+                    Integer.parseInt(this.datos.get("HSN")),
+                    this.datos.get("AWB")
             );
 
 //            String[] formattedXml = {

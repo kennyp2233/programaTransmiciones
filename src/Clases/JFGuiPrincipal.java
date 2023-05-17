@@ -7,6 +7,7 @@ package Clases;
 import com.formdev.flatlaf.FlatDarculaLaf;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.FlatIntelliJLaf;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -39,6 +40,9 @@ public class JFGuiPrincipal extends javax.swing.JFrame {
         }
 
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        this.setTitle("papa keni");
     }
 
     /**
