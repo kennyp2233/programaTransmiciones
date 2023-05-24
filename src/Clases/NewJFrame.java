@@ -15,9 +15,15 @@ import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import com.formdev.flatlaf.intellijthemes.FlatDarkPurpleIJTheme;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatGitHubContrastIJTheme;
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.beans.Statement;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.logging.Level;
@@ -44,7 +50,7 @@ public class NewJFrame extends javax.swing.JFrame {
             UIManager.setLookAndFeel(new FlatDarkPurpleIJTheme());
             
             Conexion cn = new Conexion();
-            cn.getConexion();
+           
 
         } catch (Exception ex) {
             System.err.println("Failed to initialize LaF");
@@ -56,6 +62,22 @@ public class NewJFrame extends javax.swing.JFrame {
         
         this.setLocationRelativeTo(null);
         this.setTitle("papa keni");
+        
+        MouseListener mouseListener = new MouseAdapter(){
+            int posX, posY;
+            
+            @Override
+            public void mousePressed(MouseEvent e){
+            posX = e.getX();
+            posY = e.getY();            
+            }
+            @Override
+            public void mouseDragged(MouseEvent e){
+            setLocation(e.getXOnScreen() - posX, e.getYOnScreen() - posY);
+            }
+        };
+        addMouseListener(mouseListener);
+        addMouseMotionListener((MouseMotionListener)mouseListener);
         
         //Oculto las guias hijas
         
@@ -129,6 +151,7 @@ public class NewJFrame extends javax.swing.JFrame {
         btnBuscarGuiasMadres = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -738,6 +761,13 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void btnBuscarGuiasMadresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarGuiasMadresActionPerformed
         System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(fechaSeleccionada.getDate()));
+        
+        StringBuilder sb = new StringBuilder();
+        try {
+            Statement st = (Statement) new Conexion().getConnection().createStatement();
+        } catch (SQLException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         this.panelTabla.setVisible(true);
     }//GEN-LAST:event_btnBuscarGuiasMadresActionPerformed

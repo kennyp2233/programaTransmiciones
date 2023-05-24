@@ -35,7 +35,7 @@ public class JFGuiPrincipal extends javax.swing.JFrame {
             
             UIManager.setLookAndFeel(new FlatDarkPurpleIJTheme());
             Conexion cn = new Conexion();
-            cn.getConexion();
+            
 
         } catch (Exception ex) {
             System.err.println("Failed to initialize LaF");

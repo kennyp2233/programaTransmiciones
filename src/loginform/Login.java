@@ -7,6 +7,11 @@ package loginform;
 
 import Clases.Conexion;
 import Clases.NewJFrame;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -19,6 +24,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Base64;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -39,6 +47,22 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         txtusername.setBackground(new java.awt.Color(0,0,0,1));
         txtpassword.setBackground(new java.awt.Color(0,0,0,1));
+        
+        MouseListener mouseListener = new MouseAdapter(){
+            int posX, posY;
+            
+            @Override
+            public void mousePressed(MouseEvent e){
+            posX = e.getX();
+            posY = e.getY();            
+            }
+            @Override
+            public void mouseDragged(MouseEvent e){
+            setLocation(e.getXOnScreen() - posX, e.getYOnScreen() - posY);
+            }
+        };
+        addMouseListener(mouseListener);
+        addMouseMotionListener((MouseMotionListener)mouseListener);
     }
 
     /**
@@ -83,7 +107,7 @@ public class Login extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(25, 118, 211));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("Created By SublimeSoftware");
+        jLabel12.setText("Created By ");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 500, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/bg-login.png"))); // NOI18N
@@ -204,9 +228,11 @@ public class Login extends javax.swing.JFrame {
                 "username VARCHAR(255) NOT NULL," +
                 "session_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
                 ")";
-        try (PreparedStatement statement = Conexion.getPreparedStatement(query)) {
-            statement.executeUpdate();
-        }
+     
+        Conexion conectar = new Conexion();
+        Statement sql = conectar.getConnection().createStatement();
+        int resultSet = sql.executeUpdate(query);
+        
     }
      
     private static void addUser(String username, String password) {
@@ -223,16 +249,18 @@ public class Login extends javax.swing.JFrame {
     }
     
      private static boolean isHWIDRegistered(String username) throws SQLException {
-        String query = "SELECT COUNT(*) FROM hwid_table WHERE username = ?";
-        try (PreparedStatement statement = Conexion.getPreparedStatement(query)) {
-            statement.setString(1, username);
-            try (ResultSet resultSet = statement.executeQuery()) {
+        String query = "SELECT COUNT(*) FROM hwid_table WHERE username =' " + username + "';";
+      
+                Conexion conectar = new Conexion();
+                Statement sql = conectar.getConnection().createStatement();
+                
+            try (ResultSet resultSet = sql.executeQuery(query)) {
                 if (resultSet.next()) {
                     int count = resultSet.getInt(1);
                     return count > 0;
                 }
             }
-        }
+        
         return false;
     }
     
@@ -296,7 +324,7 @@ public class Login extends javax.swing.JFrame {
             String user = "root";
             String password = "kevin12345";*/
             connection = new Conexion();
-            connection.getConexion();
+            connection.getConnection();
             
            createSessionTable(); // Crear la tabla para almacenar las sesiones
 //            Scanner scanner = new Scanner(System.in);
@@ -330,6 +358,9 @@ public class Login extends javax.swing.JFrame {
                     System.out.println("HWID registrado: " + currentHWID);
                     saveSession(username); // Guardar la sesión iniciada en la base de datos
                     // Aquí puedes continuar con la lógica de tu programa después de autenticar correctamente al usuario por primera vez.
+                    this.setVisible(false);
+                        NewJFrame jf = new NewJFrame();             
+            jf.setVisible(true);
                 }
             } else {
                 System.out.println("Inicio de sesión fallido. Usuario o contraseña incorrectos.");
